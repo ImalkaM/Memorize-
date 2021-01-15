@@ -9,7 +9,7 @@
 import Foundation
 //Model
 
-//specifying card content dont care type
+//specifying card content dont care type not
 struct MemoryGame<CardContent> {
     var cards: Array<Card>
     
@@ -33,5 +33,6 @@ struct MemoryGame<CardContent> {
         var isMatched: Bool = false
         //dont care type card content
         var content: CardContent
+        
     }
 }
