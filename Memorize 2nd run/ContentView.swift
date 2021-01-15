@@ -12,16 +12,21 @@ struct ContentView: View {
     var viewModel:EmojiMemoryGame
     
     var body: some View {
-        HStack {
-            ForEach(viewModel.cards){ card in
-                CardView(card: card).onTapGesture {
-                    self.viewModel.choose(card: card)  
+        NavigationView{
+            HStack {
+                ForEach(viewModel.cards){ card in
+                    CardView(card: card).onTapGesture {
+                        self.viewModel.choose(card: card)
+                    }
                 }
+                    .aspectRatio(2/3, contentMode: .fit) //assignment 1 task 3
             }
+            .padding()
+            .foregroundColor(Color.orange)
+                .font(viewModel.cards.count < 4 ? Font.largeTitle : Font.title) //assignment 1 task 5
+            
         }
-        .padding()
-        .foregroundColor(Color.orange)
-        .font(Font.largeTitle)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 //card content

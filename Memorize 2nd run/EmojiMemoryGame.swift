@@ -18,7 +18,7 @@ class EmojiMemoryGame {
         
     //creating cardsgame
     static func createMemoryGame() -> MemoryGame<String> {
-        let emojis = ["👻","🎃","🕷"]
+        let emojis = ["👻","🎃","🕷","👹","👽"]
         return MemoryGame<String>(numberOfPairsOfCards: emojis.count){ pairIndex in
             return emojis[pairIndex]
         }
@@ -26,7 +26,7 @@ class EmojiMemoryGame {
     
     //MARK: - Acess to the model
     var cards: Array<MemoryGame<String>.Card> {
-        model.cards.shuffled()
+        model.cards.shuffled() //Assignment 1 task 2
     }
     
     //MARK: Intent
