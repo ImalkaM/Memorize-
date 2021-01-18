@@ -10,11 +10,11 @@ import Foundation
 import SwiftUI
 
 //ViewModel
-class EmojiMemoryGame {
+class EmojiMemoryGame: ObservableObject {
     
     //accessing model var
     //set keyword means views can see the model but only viewmodel can write
-    private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
+    @Published private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
         
     //creating cardsgame
     static func createMemoryGame() -> MemoryGame<String> {
@@ -26,7 +26,7 @@ class EmojiMemoryGame {
     
     //MARK: - Acess to the model
     var cards: Array<MemoryGame<String>.Card> {
-        model.cards.shuffled() //Assignment 1 task 2
+        model.cards //Assignment 1 task 2
     }
     
     //MARK: Intent
